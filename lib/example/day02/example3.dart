@@ -83,9 +83,8 @@ void main(){
   }
   const obj1 = 1;
   const first = 1;
-  const last = 4;
+  const last = 10;
   switch(obj1){
-  // Matches if 1 == obj1
     case 1:
       print('one');
     case >= first && <= last:
