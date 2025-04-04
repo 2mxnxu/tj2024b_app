@@ -9,7 +9,7 @@ void main(){
 
   int a1 = 2;
   int b1 = 1;
-  print (a1-b1);
+  print(a1-b1);
 
   int a2 = 2;
   print(-a2);
