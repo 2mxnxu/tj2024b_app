@@ -69,20 +69,26 @@ class _HomeState extends State<Home>{
                       // todo  <==> { key : value , key : value }
                       // todo['key']  <==> value
                       return Card ( child: ListTile(
-                        title: Text( todo['title'] ) , // 제목
-                        subtitle: Column(
-                          children: [ // dart 언어 에서 문자와 변수를 같이 출력 하는 방법
-                            // 방법1 : 변수값만 출력할 경우에는  , " 문자열 $변수명 "
-                            // 방법2 : 변수안에 key의 값을 출력할 경우에는 , " 문자열 ${ 변수명['key'] }"
-                            // { key : value , key : value , key : value }
-                            Text( "할일내용 : ${todo['content'] }" ),
-                            Text( "할일상태 : ${todo['done'] }" ),
-                            Text( "등록일 : ${todo['createAt'] }" )
-                          ],
-                        ),
-                        // trailing : ListTile 오른쪽 끝에 표시되는 위젯
-                        trailing: IconButton( onPressed: ()=>{ todoDelete( todo['id'] ) } , icon: Icon( Icons.delete ) ),
-
+                          title: Text( todo['title'] ) , // 제목
+                          subtitle: Column(
+                            children: [ // dart 언어 에서 문자와 변수를 같이 출력 하는 방법
+                              // 방법1 : 변수값만 출력할 경우에는  , " 문자열 $변수명 "
+                              // 방법2 : 변수안에 key의 값을 출력할 경우에는 , " 문자열 ${ 변수명['key'] }"
+                              // { key : value , key : value , key : value }
+                              Text( "할일내용 : ${todo['content'] }" ),
+                              Text( "할일상태 : ${todo['done'] }" ),
+                              Text( "등록일 : ${todo['createAt'] }" )
+                            ],
+                          ),
+                          // trailing : ListTile 오른쪽 끝에 표시되는 위젯
+                          trailing : Row( // 하위 위젯들을 가로 배치 vs Column
+                            mainAxisSize : MainAxisSize.min , // Row 배치 방법 , 오른쪽 위젯들의 넓이를 자동으로 최소 크기 할당
+                            children: [ // Row 위젯의 자식 들
+                              IconButton( onPressed: () => { Navigator.pushNamed(context, "/update" , arguments : todo['id'] ) } , icon: Icon(Icons.edit) ) ,
+                              IconButton( onPressed: () => { Navigator.pushNamed(context , "/detail" , arguments : todo['id'] ) }, icon: Icon(Icons.info) , ) ,
+                              IconButton( onPressed: () => { todoDelete( todo['id'] ) } , icon: Icon( Icons.delete ) ),
+                            ],
+                          )
                       ) // ListTtile end
                       ); // ;(세미콜론) return 마다
 
