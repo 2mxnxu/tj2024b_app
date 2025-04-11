@@ -1,6 +1,3 @@
-// home.dart : 메인 화면 갖는 앱의 파일
-
-// 1. 상태 있는 위젯
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 class Home extends StatefulWidget{
