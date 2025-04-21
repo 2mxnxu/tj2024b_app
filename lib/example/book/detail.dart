@@ -139,7 +139,6 @@ class _DetailState extends State<Detail> {
     return password;
   }
 
-  // 에러 다이얼로그
   void _showErrorDialog(String message) {
     showDialog(
       context: context,
