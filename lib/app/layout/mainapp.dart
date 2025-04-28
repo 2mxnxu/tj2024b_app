@@ -43,7 +43,7 @@ class _MainAppState extends State<MainApp>{
                 //   assets :
                 //     - assets/images/
                 Image(
-                  image: AssetImage('images/logo.jpg'), // 로컬이미지 : Image(image: AssetImage('로컬이미지경로'))
+                  image: AssetImage('assets/images/logo.jpg'), // 로컬이미지 : Image(image: AssetImage('로컬이미지경로'))
                   height: 50, // 이미지 세로 크기
                   width: 50, // 이미지 가로 크기
                 ),
