@@ -4,6 +4,7 @@ import 'package:tj2024b_app/app/member/info.dart';
 import 'package:tj2024b_app/app/member/login.dart';
 import 'package:tj2024b_app/app/member/signup.dart';
 import 'package:tj2024b_app/app/product/productList.dart';
+import 'package:tj2024b_app/app/product/productRegister.dart';
 class MainApp extends StatefulWidget{
   @override
   State<StatefulWidget> createState() { return _MainAppState(); }
@@ -15,7 +16,7 @@ class _MainAppState extends State<MainApp>{
   List<Widget> pages = [
     Text("홈 페이지"),
     ProductList(),
-    Text("게시물2 페이지"),
+    ProductRegister(),
     Info()
   ];
   // 2. 페이지 상단 제목 리스트
